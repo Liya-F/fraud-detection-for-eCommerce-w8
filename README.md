@@ -1,37 +1,42 @@
-# 🛡️ Fraud Detection for E-Commerce Transactions
+# Fraud Detection for E-Commerce Transactions
 
-This project focuses on detecting fraudulent e-commerce transactions using data-driven techniques. It involves loading, cleaning, and enriching transactional data, followed by engineering features that help distinguish legitimate behavior from potential fraud. The prepared dataset will be used in later stages for machine learning model development and evaluation.
+This project aims to detect fraudulent e-commerce transactions using machine learning. It involves structured data preprocessing, feature engineering, handling class imbalance, and evaluating classification models using appropriate metrics for imbalanced data.
 
 ## Objective
 
-The objective is to build a reliable and well-structured preprocessing pipeline that prepares e-commerce transaction data for fraud detection. This includes handling missing values, extracting behavioral and time-based features, addressing class imbalance, and encoding and scaling the data for modeling.
+Build robust pipelines to preprocess data, handle fraud-specific challenges (like imbalance), and train & evaluate models to identify fraudulent behavior effectively.
 
-## Datasets
+## Datasets Used
 
-- **Fraud_Data.csv**: Contains user and transaction information such as signup time, purchase time, browser, source, device ID, age, and IP address, along with the fraud label.
-- **IpAddress_to_Country.csv**: Maps IP address ranges to their corresponding countries, which is used for geolocation enrichment.
+- `Fraud_Data.csv` + `IpAddress_to_Country.csv` – For behavioral and location-based fraud detection.
+- `creditcard.csv` – For detecting fraud in credit card transactions.
 
-## 🔧 Main Steps
+## Key Steps
 
-- **Data Loading**: Custom classes are used to load and structure data efficiently.
-- **Cleaning**: Duplicate entries are removed, and column data types are corrected for consistency.
-- **Exploratory Analysis**: Distributions of numeric and categorical variables are explored, and relationships with fraud labels are visualized.
-- **IP Geolocation**: IP addresses are converted to integers and mapped to countries to enhance location-based insights.
-- **Feature Engineering**:
-  - Extracted time-related fields like `hour_of_day`, `day_of_week`, and `time_since_signup`.
-  - Calculated behavioral metrics such as user transaction count and average transaction velocity.
-- **Class Imbalance Handling**: SMOTE (Synthetic Minority Over-sampling Technique) is applied to improve the balance between fraudulent and legitimate transactions.
-- **Encoding & Scaling**: Categorical variables are one-hot encoded, and numeric features are standardized using `StandardScaler`.
+### Preprocessing & Feature Engineering
 
-## Technologies Used
+- Handled missing values, duplicates, and inconsistent types.
+- Enriched data with:
+  - IP-to-country mapping
+  - Time-based features (`time_since_signup`, `hour_of_day`, etc.)
+  - Behavioral metrics (user transaction count, etc.)
+- Addressed **class imbalance** using SMOTE.
+- One-hot encoded categorical features and standardized numeric ones.
 
-- **Python** (pandas, numpy)
-- **Visualization**: seaborn, matplotlib
-- **Machine Learning Prep**: scikit-learn, imbalanced-learn (SMOTE)
+### Model Training & Evaluation
 
-## Next Phase
+Models trained on both datasets:
+- **Logistic Regression**
+- **Random Forest Classifier**
 
-The cleaned and enriched dataset is now ready for training classification models. Future steps include model building, evaluation using precision-recall metrics, and applying explainability methods to understand model decisions.
+Evaluation included:
+- **F1-Score**
+- **Confusion Matrix**
+- **Precision-Recall AUC**
+- **ROC Curve**
 
----
+## Status
+- Preprocessing pipelines  
+- Trained & evaluated 4 models (2 per dataset)  
+- Visual evaluation and metric-based comparison using consistent evaluation workflow
 
