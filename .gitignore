@@ -44,3 +44,4 @@ coverage.xml
 # Ignore root-level data folder
 /data/
 !src/data/
+models/*.pkl
