@@ -1,10 +1,10 @@
 # Fraud Detection for E-Commerce Transactions
 
-This project aims to detect fraudulent e-commerce transactions using machine learning. It involves structured data preprocessing, feature engineering, handling class imbalance, and evaluating classification models using appropriate metrics for imbalanced data.
+This project aims to detect fraudulent e-commerce transactions using machine learning. It includes data preprocessing, feature engineering, handling class imbalance, training classification models, evaluating them with appropriate metrics, and explaining predictions using SHAP.
 
 ## Objective
 
-Build robust pipelines to preprocess data, handle fraud-specific challenges (like imbalance), and train & evaluate models to identify fraudulent behavior effectively.
+Build robust pipelines to preprocess data, address fraud-specific challenges such as class imbalance, train machine learning models, and interpret predictions to identify fraudulent behavior effectively.
 
 ## Datasets Used
 
@@ -35,8 +35,11 @@ Evaluation included:
 - **Precision-Recall AUC**
 - **ROC Curve**
 
-## Status
-- Preprocessing pipelines  
-- Trained & evaluated 4 models (2 per dataset)  
-- Visual evaluation and metric-based comparison using consistent evaluation workflow
+### Model Explainability (SHAP)
 
+SHAP was used to interpret Random Forest predictions.
+
+- SHAP Summary Plots to identify globally important features.
+- SHAP Force Plots for local explanations of individual predictions.
+- Used TreeExplainer with performance tuning for SHAP computation.
+- Subsampled data for efficiency and clarity in visualizations.
